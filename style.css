@@ -1,0 +1,753 @@
+/* Reset everything to remove margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body style */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #fff;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, black, black);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    opacity: 0; /* Initially hidden for animation */
+    animation: fadeInNavbar 1.5s ease-out forwards; /* Fade-in animation */
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    padding: 0.3rem;
+    transition: color 0.3s ease;
+}
+
+
+
+
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+/* Hero Section */
+.header {
+    position: relative;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    padding: 60px 20px;
+}
+
+.hero-image img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Bio Section */
+.bio-section {
+    background-color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.bio-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.bio-section p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #555;
+}
+
+/* Quote Section */
+.quote-section {
+    background-color: #f0f0f0;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+blockquote {
+    font-size: 1.5rem;
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #555;
+}
+
+blockquote strong {
+    display: block;
+    margin-top: 10px;
+    color: #000;
+}
+
+/* Footer Section */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 40px;
+}
+
+.footer p {
+    font-size: 1rem;
+}
+
+/* Animation for Navbar */
+@keyframes fadeInNavbar {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Image Container for Homepage */
+.image-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Centered Text on Hero Image */
+.centered-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    letter-spacing: 2px;
+}
+
+/* Card Container */
+.container {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Card Styles */
+.card {
+    position: relative;
+    border-radius: 10px;
+    background-color: #222;
+    border: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 360px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card-body {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    color: #ccc;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.btn-danger {
+    background-color: #E74C3C;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    padding: 10px;
+    width: 100%;
+}
+
+.btn-danger:hover {
+    background-color: #C0392B;
+    transform: scale(1.05);
+}
+
+
+
+/* Hero Section */
+.hero-text h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    font-style: italic;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Bio Section */
+.bio-section h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #e74c3c; /* Red color for emphasis */
+}
+
+/* Style for the paragraph text */
+.bio-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.bio-section .lead {
+    font-size: 1.3rem;
+    line-height: 1.8;
+}
+
+.bio-section .btn {
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.bio-section .btn:hover {
+    background-color: #c0392b;
+}
+
+/* Quote Section */
+.quote-section blockquote {
+    font-size: 1.5rem;
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #555;
+}
+
+.quote-section blockquote p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.quote-section blockquote footer {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Footer */
+.footer {
+    background-color: #222;
+    font-size: 1rem;
+}
+
+/* Image Styling */
+.bio-section img {
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Image */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+    .bio-section h2 {
+        font-size: 2rem;
+    }
+    .bio-section .lead {
+        font-size: 1.1rem;
+    }
+}
+/* Global Styles */
+body {
+    font-family: 'Georgia', serif; /* Formal font */
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    background-color: #343a40;
+}
+
+.navbar .navbar-brand {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.navbar-nav .nav-link {
+    text-transform: uppercase;
+}
+
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #f5f5f5;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    font-weight: 700;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin: 15px 0;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    background: url('/images/pexels-tima-miroshnichenko-9572372.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    z-index: 2;
+    color: #fff;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.explore-btn {
+    padding: 10px 25px;
+    background: #f57c00;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.explore-btn:hover {
+    background: #ff9800;
+}
+
+/* About Section */
+.about-section {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px;
+    background: #1e1e1e;
+}
+
+.about-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.about-content p {
+    font-size: 1rem;
+    color: #bbb;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Focus Section */
+.focus-section {
+    padding: 50px;
+    text-align: center;
+    background: #121212;
+}
+
+.focus-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.focus-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.focus-card {
+    flex: 1;
+    max-width: 30%;
+    padding: 20px;
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 8px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.focus-card h3 {
+    font-size: 1.5rem;
+    color: #f57c00;
+}
+
+.focus-card p {
+    font-size: 1rem;
+    color: #bbb;
+}
+
+.focus-card:hover {
+    transform: scale(1.05);
+    border-color: #f57c00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-section {
+        flex-direction: column;
+    }
+
+    .focus-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .focus-card {
+        max-width: 100%;
+    }
+}
+
+/* Bio Section */
+.bio-section h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #2c3e50; /* Dark grey */
+}
+
+/* Text Formatting for Paragraphs */
+.bio-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Button Styles */
+.bio-section .btn {
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.bio-section .btn:hover {
+    background-color: #c0392b;
+}
+
+/* Quote Section */
+.quote-section blockquote {
+    font-size: 1.25rem;
+    font-style: italic;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #555;
+    border-left: 4px solid #e74c3c;
+    padding-left: 20px;
+}
+
+.quote-section blockquote p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.quote-section blockquote footer {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Footer */
+.footer {
+    background-color: #343a40;
+    font-size: 1rem;
+    color: #fff;
+}
+
+/* Image Styling */
+.bio-section img {
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Image */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+    .bio-section h2 {
+        font-size: 2rem;
+    }
+    .bio-section .lead {
+        font-size: 1.1rem;
+    }
+}
+/* Ensure text is aligned to the left */
+.bio-section .text-start {
+    text-align: left;
+}
+
+/* Adjust margins and spacing for the About section */
+.bio-section h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.bio-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Responsive Image */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+.footer {
+    background-color: #111;
+    padding: 40px 0;
+    color: #fff;
+    text-align: center;
+}
+
+.footer .container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.footer .social-links {
+    margin: 20px 0;
+}
+
+.social-icon {
+    margin: 0 15px;
+    color: #fff;
+    font-size: 1.8rem; /* Increase icon size */
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #d9534f; /* Add hover effect for social media links */
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        text-align: center;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+    .social-icon {
+        margin: 0 10px;
+    }
+}
+.explore-btn {
+    padding: 10px 25px;
+    background: #f57c00;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.explore-btn:hover {
+    background: #ff9800; /* Slightly lighter shade of orange */
+    color: #000; /* Contrast text color for better visibility */
+    transform: scale(1.1); /* Slightly enlarge the button */
+    box-shadow: 0px 5px 15px rgba(245, 124, 0, 0.5); /* Add a glowing shadow */
+}

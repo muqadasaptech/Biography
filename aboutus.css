@@ -1,0 +1,117 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #f4f4f4; /* Light text color */
+}
+
+/* Main container */
+.about-page {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #1e1e1e; /* Dark card background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1.5s;
+}
+
+/* Intro Section */
+.intro {
+    margin-bottom: 40px;
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+    color: #ffffff; /* Bright white for emphasis */
+    margin-bottom: 10px;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    color: #cfcfcf; /* Soft light gray */
+}
+
+/* Biographies Section */
+.biographies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.bio-card {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #333; /* Subtle border */
+    border-radius: 10px;
+    background: #252525; /* Slightly lighter than the page background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #d4d4d4; /* Light gray text */
+}
+
+.bio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8); /* Deeper hover shadow */
+}
+
+.bio-card h2 {
+    font-size: 1.5rem;
+    color: #ffffff; /* Bright white for titles */
+    margin-bottom: 10px;
+}
+
+.bio-card p {
+    color: #b5b5b5; /* Softer gray for body text */
+    margin: 5px 0;
+}
+
+.quote {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #888; /* Muted gray for quotes */
+}
+
+/* Legacy Section */
+.legacy {
+    margin-top: 40px;
+}
+
+.legacy h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.legacy p {
+    font-size: 1.2rem;
+    color: #cfcfcf;
+    line-height: 1.6;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
